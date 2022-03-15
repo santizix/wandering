@@ -1,4 +1,3 @@
-import imp
 from turtle import distance, title
 from wandering import ComunWandering, Wandering
 from track import Track
@@ -16,13 +15,13 @@ def walking(location, wandering, steps):
 
 def simulate_walk(steps, number_attemps,  type_wandering):
     wandering = type_wandering(name='Alirio')
-    origen = Location(0, 0)
+    origen = Track(0, 0)
     distances = []
     
     for _ in range(number_attemps):
-        track = Track()
-        track.add_wandering(wandering, origen)
-        simulations_walk = walking(track, wandering, steps)
+        location = Location()
+        location.add_wandering(wandering, origen)
+        simulations_walk = walking(location, wandering, steps)
         distances.append(round(simulations_walk, 1))
     return distances
 
