@@ -2,8 +2,16 @@ import random
 
 class Wandering:
     
-    def __init__(self, name):
+    def __init__(self, name, x=0, y=0):
         self.name = name
+        self.x = x
+        self.y = y
+        
+    def posicion(self):
+        return (self.x, self.y)
+    
+    def distance_origin(self):
+        return (self.x**2 + self.y**2)**0.5
         
 class ComunWandering(Wandering):
     
@@ -11,4 +19,7 @@ class ComunWandering(Wandering):
         super().__init__(name)
         
     def walk(self):
-        return random.choice([(0, 2),(0, -2), (2, 0), (-2, 0)])
+        dx, dy = random.choice([(0, 1),(1, 0), (-5, 0), (0, -5)])
+        self.x += dx
+        self.y += dy 
+        return [dx, dy]
