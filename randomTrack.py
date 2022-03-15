@@ -14,7 +14,7 @@ def walking(location, wandering, steps):
     return beginning.distance(location.get_location(wandering))
 
 def simulate_walk(steps, number_attemps,  type_wandering):
-    wandering = type_wandering(name='Alirio')
+    wandering = type_wandering(name='Joaquin')
     origen = Track(0, 0)
     distances = []
     
